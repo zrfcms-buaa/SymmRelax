@@ -1,0 +1,63 @@
+{
+    "data": {
+      "split": "test",
+      "num_workers": 4
+    },
+  
+    "runtime": {
+      "device": "cuda"
+    },
+  
+    "symmetry": {
+      "symprec": 0.05,
+      "angtol": 5.0
+    },
+  
+    "scoring": {
+      "use_aux_score": false,
+  
+      "short_cut": 0.75,
+      "min_d_thr_keep": 0.60,
+  
+      "geom_d0": 1.6,
+      "geom_k": 0.2,
+  
+      "keep_final_bonus": 0.02,
+      "keep_raw_penalty": 0.10,
+      "keep_cellu_bonus": 0.00,
+      "keep_cs_drop_penalty": 1.0
+    },
+  
+    "postprocess": {
+      "project_cell_post": false,
+  
+      "keep_refine_steps": 0,
+      "keep_refine_lr": 0.01,
+      "keep_refine_w_anchor": 1.0,
+      "keep_refine_w_short": 1.0
+    },
+  
+    "energy": {
+      "enabled": true,
+  
+      "energy_ckpt": "/home/SymmRelax/model_best.pth.tar",
+      "cgcnn_tmp_root": "/home/SymmRelax/_cgcnn_tmp",
+      "energy_device": "cuda",
+  
+      "energy_max_num_nbr": 12,
+      "energy_radius": 12.0,
+  
+      "beta_E": 0.8,
+      "energy_topM": 2,
+  
+      "energy_only_tiebreak": true,
+      "energy_tiebreak_margin": 0.25
+    },
+  
+    "stats": {
+      "enabled": true,
+      "stats_out": "",
+      "stats_csv": ""
+    }
+  }
+  

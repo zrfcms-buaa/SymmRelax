@@ -1,0 +1,78 @@
+{
+    "train": {
+      "batch_size": 64,
+      "num_workers": 8,
+      "seed": 123,
+  
+      "lr": 1e-4,
+      "max_norm": 50.0,
+  
+      "loss_cap": 100.0,
+      "early_stop_min_delta": 1e-3,
+  
+      "amp": true,
+      "amp_dtype": "bf16",
+  
+      "pos_warmup_epochs": 5,
+      "stage1_w_pos": 0.05,
+  
+      "w_rep": 0.10,
+      "w_frac": 0.10,
+      "w_pos": 0.08,
+      "w_cell": 1.00,
+  
+      "w_rep_keep": 0.03,
+      "w_frac_keep": 0.03,
+      "w_pos_keep": 0.03,
+      "w_cell_keep": 1.00,
+  
+      "w_coarse": 0.50,
+  
+      "use_aux_dist": false,
+      "w_dist": 0.0,
+      "w_dist_keep": 0.0,
+      "aux_var_eps": 1e-6,
+  
+      "w_neutral": 0.05,
+      "w_q_sign": 0.02,
+      "w_q_mm": 0.01,
+      "ct_reg_start_epoch": 5,
+      "ct_reg_warmup_epochs": 15,
+      "q_sign_on_changed_only": false
+    },
+  
+    "model": {
+      "hidden_channels": 384,
+      "num_layers": 4,
+      "num_rbf": 128,
+      "cutoff": 25.0,
+      "num_elements": 118,
+      "d_model": 128,
+      "max_cell_dof": 6,
+      "theta_hidden": 256,
+  
+      "use_aux_dist": false,
+  
+      "use_charge_transfer": true,
+      "ct_insert_after": 2,
+      "ct_chi0": 0.4,
+      "ct_tau": 0.15,
+      "ct_q_clip": 2.5,
+      "ct_learnable_chi": true,
+      "ct_z_index_mode": "atomic_number",
+  
+      "graph_pool": "meanmaxstd",
+      "use_lattice_embed": true,
+      "lattice_emb_dim": 32,
+      "std_min_count": 3,
+  
+      "theta_use_q": false,
+      "cell_delta_clip": 2.0,
+  
+      "use_refinement": true,
+      "refinement_layers": 1,
+      "theta_free_scale": 0.25,
+      "theta_ctx_dim": 64
+    }
+  }
+  
